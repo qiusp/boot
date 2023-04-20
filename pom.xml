@@ -7,22 +7,21 @@
     <groupId>org.springblade</groupId>
     <artifactId>SpringBlade</artifactId>
     <packaging>jar</packaging>
-    <version>3.5.0</version>
+    <version>3.6.0</version>
 
     <properties>
-        <blade.tool.version>3.5.0</blade.tool.version>
+        <blade.tool.version>3.6.0</blade.tool.version>
 
         <java.version>1.8</java.version>
 
-        <knife4j.version>2.0.9</knife4j.version>
-        <mybatis.plus.version>3.5.2</mybatis.plus.version>
+        <knife4j.version>4.1.0</knife4j.version>
+        <mybatis.plus.version>3.5.3.1</mybatis.plus.version>
         <protostuff.version>1.6.0</protostuff.version>
         <captcha.version>1.6.2</captcha.version>
-        <easyexcel.version>2.2.6</easyexcel.version>
+        <easyexcel.version>2.2.11</easyexcel.version>
 
-        <spring.boot.version>2.7.1</spring.boot.version>
-        <spring.plugin.version>2.0.0.RELEASE</spring.plugin.version>
-        <spring.platform.version>Cairo-SR8</spring.platform.version>
+        <spring.version>5.3.27</spring.version>
+        <spring.boot.version>2.7.10</spring.boot.version>
 
         <!-- 推荐使用Harbor -->
         <docker.registry.url>192.168.186.129</docker.registry.url>
@@ -33,14 +32,11 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.springframework.plugin</groupId>
-                <artifactId>spring-plugin-core</artifactId>
-                <version>${spring.plugin.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.plugin</groupId>
-                <artifactId>spring-plugin-metadata</artifactId>
-                <version>${spring.plugin.version}</version>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>${spring.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -50,9 +46,9 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>io.spring.platform</groupId>
-                <artifactId>platform-bom</artifactId>
-                <version>${spring.platform.version}</version>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-dependencies</artifactId>
+                <version>${knife4j.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -98,7 +94,7 @@
         </dependency>
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-spring-ui</artifactId>
+            <artifactId>knife4j-openapi2-ui</artifactId>
             <version>${knife4j.version}</version>
         </dependency>
         <dependency>
