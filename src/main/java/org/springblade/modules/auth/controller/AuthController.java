@@ -90,4 +90,11 @@ public class AuthController {
 		return R.data(Kv.init().set("key", key).set("image", specCaptcha.toBase64()));
 	}
 
+	@PostMapping("/logout")
+	@ApiOperation(value = "登出")
+	public R<Kv> logout() {
+		// 登出预留逻辑
+		return R.data(Kv.init().set("code", "200").set("msg", "操作成功"));
+	}
+
 }

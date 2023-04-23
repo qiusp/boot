@@ -148,6 +148,7 @@ social:
 #blade配置
 blade:
   token:
+    #使用 @org.springblade.test.SignKeyGenerator 获取
     sign-key: 请配置32位签名提高安全性
   xss:
     enabled: true
